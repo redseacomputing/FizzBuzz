@@ -1,9 +1,8 @@
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import static org.junit.jupiter.api.Assertions.*;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BuzzClassTest {
@@ -13,26 +12,6 @@ class BuzzClassTest {
     @BeforeEach
     void setUp() {
         buzzer = new BuzzClass();
-    }
-
-    @Test
-    void buzzer_should_exist() {
-        assertEquals("1", buzzer.process(1));
-    }
-
-    @Test
-    void buzzer_should_return_FIZZ_on_3() {
-        assertEquals("FIZZ", buzzer.process(3));
-    }
-
-    @Test
-    void buzzer_should_return_BUZZ_on_5() {
-        assertEquals("BUZZ", buzzer.process(5));
-    }
-
-    @Test
-    void buzzer_should_return_FIZZ_BUZZ_on_15() {
-        assertEquals("FIZZBUZZ", buzzer.process(15));
     }
 
     @ParameterizedTest
