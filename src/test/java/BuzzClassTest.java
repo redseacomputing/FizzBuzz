@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BuzzClassTest {
@@ -32,4 +33,22 @@ class BuzzClassTest {
     void buzzer_should_work_with_multiples_of_3(int args) {
         assertEquals("FIZZ", buzzer.process(args));
     }
-}
+
+    @Test
+    void test_zero_with_that_function() {
+        assertEquals("infinitive",buzzer.process(0) );
+    }
+
+    @Test
+    void test_normal_numbers() {
+        for(int i = 1; i<=100;i++){
+            int number = normalNumbersForBuzzer(i);
+            assertEquals(String.valueOf(number),buzzer.process(number) );
+        }
+    }
+
+    private int normalNumbersForBuzzer(int  number){
+        if(number % 3 == 0 || number % 5 == 0 ){ return 1;}
+            else return number;
+        }
+    }
